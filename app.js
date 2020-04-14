@@ -60,7 +60,7 @@ function deleteOrCheck(e) {
     if (item.classList[0] === 'complete-button') {
         const todoClicked = item.parentElement;
         todoClicked.classList.toggle('completed');
-        getCompletedTodos(todoClicked);
+        // getCompletedTodos(todoClicked);
     }
 
 }
@@ -138,26 +138,26 @@ function deleteLocalTodos(todo) {
     localStorage.setItem('todos', JSON.stringify(todos));
 }
 
-function getCompletedTodos(todo) {
-    let completedIndex;
-    if (localStorage.getItem('completedIndex') === null) {
-        completedIndex = [];
-    }
-    else {
-        completedIndex = JSON.parse(localStorage.getItem('completedIndex'));
-    }
-    const todos = document.querySelectorAll(".todo");
-    for (var i = 0; i < todos.length; i++) {
-        if (todos[i].classList.contains('completed')) {
-            console.log(todos[i]);
-            console.log(todo);
-            if (todos[i] === todo)
-                completedIndex.push(i);
-        }
-        console.log(completedIndex)
-    }
-    localStorage.setItem('completedIndex', completedIndex);
-}
+// function getCompletedTodos(todo) {
+//     let completedIndex;
+//     if (localStorage.getItem('completedIndex') === null) {
+//         completedIndex = [];
+//     }
+//     else {
+//         completedIndex = JSON.parse(localStorage.getItem('completedIndex'));
+//     }
+//     const todos = document.querySelectorAll(".todo");
+//     for (var i = 0; i < todos.length; i++) {
+//         if (todos[i].classList.contains('completed')) {
+//             console.log(todos[i]);
+//             console.log(todo);
+//             if (todos[i] === todo)
+//                 completedIndex.push(i);
+//         }
+//         console.log(completedIndex)
+//     }
+//     localStorage.setItem('completedIndex', completedIndex);
+// }
 
 function getTodos() {
     let todos;
